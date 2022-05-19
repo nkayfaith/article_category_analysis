@@ -28,7 +28,7 @@ The purpose of this project is to categorise articles(English)
 ## Discussion, Analysis and Result
 1. Model Architecture as follows:
 
-A Sequential model with attributes of Dense = 256, Dropout = .3, Hidden Layer = 3, Epochs = 100 with callbacks
+A Sequential model with attributes of  embedding_output=128, nodes=64, dropout=0.2, hidden_layer=2 and epochs = 100 with EarlyStopping
 ![image](statics/model.png)
 
 
@@ -50,6 +50,18 @@ Both F1 and Accuracy recorded at
 ![image](statics/performance.png)
 
 4. Reviews
+* Accuracy recorded at 86.67%
+* Graph shows high accuracy, low loss which indicates model is good HOWEVER the divergence between the training and validation trends from epoch 5 onwards indicates ovefitting: this occurs if the model has more capacity than is required for the problem.
+
+* Suggestions :
+* Reduce number of neurons for the hidden layers
+* Set weight regularization
+* Use K-Fold Validation
+
 
 ## Credits
 https://raw.githubusercontent.com/susanli2016/PyCon-Canada-2019-NLP-Tutorial/master/bbc-text.csv
+
+## Reference
+https://machinelearningmastery.com/learning-curves-for-diagnosing-machine-learning-model-performance/
+https://www.analyticsvidhya.com/blog/2021/06/complete-guide-to-prevent-overfitting-in-neural-networks-part-1/#:~:text=it%20from%20overfitting.-,Data%20Augmentation,control%20over%20the%20training%20data.
