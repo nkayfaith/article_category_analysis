@@ -76,7 +76,7 @@ hist = mt.model_training(model, X_train,y_train, (X_test,y_test),epochs=100)
 print(hist.history.keys())
 
 # =============================================================================
-# epochs = 100 with callbacks
+# epochs = 100 with EarlyStopping
 # =============================================================================
 
 #%% Step 8) Model Performance
@@ -89,8 +89,14 @@ y_true = np.argmax(y_test, axis=-1)
 me.report_metrics(y_true,y_pred)
 
 # =============================================================================
-# Accuracy recorded at 86.67%
-# Graph shows high accuracy, low loss which indicates model is good enough
+#  Reviews
+# * Accuracy recorded at 86.67%
+# * Graph shows high accuracy, low loss which indicates model is good HOWEVER the divergence between the training and validation trends from epoch 5 onwards indicates ovefitting: this occurs if the model has more capacity than is required for the problem.
+# 
+# * Suggestions :
+# * Reduce number of neurons for the hidden layers
+# * Set weight regularization
+# * Use K-Fold Validation
 # =============================================================================
 
 #%% Step 10) Model Deployment
